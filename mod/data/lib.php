@@ -1724,7 +1724,10 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
         $fieldname = preg_quote($fieldname, '/');
         $patterns[] = "/\[\[$fieldname\]\]/i";
         $searchfield = data_get_field_from_id($field->field->id, $data);
-        if (!empty($search_array[$field->field->id]->data)) {
+        if (!empty($search_array[$field->field->id]->data) ||
+            isset($search_array[$field->field->id]) && (
+                $search_array[$field->field->id]->data === 0 ||
+                $search_array[$field->field->id]->data === '0')) {
             $replacement[] = $searchfield->display_search_field($search_array[$field->field->id]->data);
         } else {
             $replacement[] = $searchfield->display_search_field();

@@ -171,7 +171,7 @@
                         $val = '';
                     }
                 }
-                if (!empty($val)) {
+                if (!empty($val) || $val === 0 || $val === '0') {
                     $search_array[$field->id] = new stdClass();
                     list($search_array[$field->id]->sql, $search_array[$field->id]->params) = $searchfield->generate_sql('c'.$field->id, $val);
                     $search_array[$field->id]->data = $val;
