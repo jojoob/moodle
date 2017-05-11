@@ -1132,7 +1132,7 @@ function data_build_search_array($data, $paging, $searcharray, $defaults = null,
                     $val = '';
                 }
             }
-            if (!empty($val)) {
+            if (!empty($val) || $val === 0 || $val === '0') {
                 $searcharray[$field->id] = new stdClass();
                 list($searcharray[$field->id]->sql, $searcharray[$field->id]->params) = $searchfield->generate_sql('c'.$field->id, $val);
                 $searcharray[$field->id]->data = $val;
