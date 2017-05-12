@@ -115,7 +115,7 @@ class data_field_date extends data_field_base {
             $data['usedate'] = 1;
             return $data;
         } else {
-            return 0;
+            return '';
         }
     }
 
