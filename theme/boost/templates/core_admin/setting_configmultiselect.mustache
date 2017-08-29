@@ -21,7 +21,7 @@
     <input type="hidden" name="{{name}}[xxxxx]" value="1">
     <select id="{{id}}" name="{{name}}[]" size="{{size}}" class="form-control" multiple>
         {{#options}}
-            <option value="{{value}}" {{#selected}}selected{{/selected}}>{{name}}</option>
+            <option value="{{value}}" {{#selected}}selected{{/selected}}>{{{name}}}</option>
         {{/options}}
     </select>
 </div>
